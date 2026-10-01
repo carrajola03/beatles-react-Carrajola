@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--preto);
+    font-family: var(--fonte-paragrafos);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@font-face {
+    font-family: 'BEBAS NEUE';
+    src: url(../fonts/BebasNeue-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url(../fonts/PlayfairDisplay-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter_18pt-Regular.ttf) format('truetype');
+}
+
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter_18pt-Bold.ttf) format('truetype');
+    font-weight: bold;
+}
+
+:root   {
+    --branco: #FFFFFF;
+    --preto: #1A1A1A;
+    --cinza: #6E6E6E;
+    --vermelho: #C1121F;
+    --vermelho-bold: #A40F1A;
+    --fonte-titulos: 'BEBAS NEUE', sans-serif;
+    --fonte-paragrafos: 'Inter', sans-serif;
+    --fonte-destaque: 'Playfair Display', serif;
+}
+
+.destaque {
+    font-family: var(--fonte-destaque);
+    font-size: 2rem;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.titulo {
+    font-family: var(--fonte-titulos);
+    font-size: 4rem;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.paragrafo {
+    font-family: var(--fonte-paragrafos);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.navbar-beatles {
+    background-color: var(--preto);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--vermelho);
+    --bs-btn-border-color: var(--vermelho-bold);
+    --bs-btn-hover-bg: var(--vermelho-bold);
+    --bs-btn-hover-border-color: var(--vermelho-bold);
+    --bs-btn-active-bg: var(--vermelho);
+    --bs-btn-active-border-color: var(--vermelho-bold);
+}
+
+section{
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.footer-beatles{
+    background-color: var(--preto);
+    color: var(--branco);
+    margin-top: auto;
+    padding: 1.5rem;
+}
+
+.logo-footer{
+    height: 5rem;
+}
+
+.footer-beatles a:hover{
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-beatles a {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.footer-beatles p {
+    margin-bottom: 0;
+    margin-top: 1.2rem;
+}
+
+.hero{
+    margin: 0;
+    padding: 0;
+}
+
+.card-home {
+    margin: 2rem;
+    padding: 2rem;
+    width: 60%;
+}
+
+.num-home {
+    font-family: var(--fonte-titulos);
+    font-size: 4rem;
+    line-height: 1.5;
+    font-weight: bold;
+    margin-bottom: -1.5rem;
+}
+
+.pa-home {
+    font-family: var(--fonte-paragrafos);
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.text-justificado {
+    text-align: justify;
+}

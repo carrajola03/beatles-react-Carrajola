@@ -1,16 +1,40 @@
-# React + Vite
+# The Beatles | Landing Page em React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Parte 2 (individual) do trabalho de Desenvolvimento Frontend II.
 
-Currently, two official plugins are available:
+## Autor
+SEU NOME COMPLETO
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Origem
+- Repositório do grupo (Parte 1): https://github.com/wnsogabriel/thebeatles-front2.git
+- Páginas que fiz na Parte 1: discografia.html e curiosidades.html
+- Autor(a) do index.html original: wnsogabriel
 
-## React Compiler
+## Site publicado
+LINK_DO_NETLIFY
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Como executar
+```
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Seções da Landing Page
+| Seção | Origem |
+|---|---|
+| Hero | index.html |
+| História | index.html |
+| Números | index.html |
+| Fotos | index.html |
+| Timeline | index.html |
+| Discografia | discografia.html (minha página) |
+| Curiosidades | curiosidades.html (minha página) |
+| Chamada final | index.html (citação do Lennon, transformada em CTA) |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Decisões de fusão
+- Navbar e rodapé das 3 páginas viraram um componente cada.
+- Os títulos H1 de Discografia e Curiosidades viraram H2; o único H1 está no Hero.
+- Os números da faixa preta eram H1 e viraram `div`.
+- Links para `.html` viraram âncoras; os cards que só levavam a páginas que não entram na Landing foram removidos.
+- Dados repetidos (links, álbuns, curiosidades, timeline, números, fotos) vêm de arrays com `map()`.
+- `useState`: filtro de período na Discografia, acordeão das Curiosidades e menu do celular.
