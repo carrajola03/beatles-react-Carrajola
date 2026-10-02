@@ -1,41 +1,44 @@
 import { links } from '../data/links'
 import { img } from '../data/img'
 
-// Divide os links em 3 colunas, como no rodapé original
-const colunas = [links.slice(0, 2), links.slice(2, 4), links.slice(4)]
+const colunas = [
+  links.slice(0, 3),
+  links.slice(3, 6),
+  links.slice(6),
+]
 
 export default function Footer() {
   return (
     <footer className="footer-beatles">
       <div className="container">
-        <div className="row align-items-center">
-          <div className="col-md-2">
+        <div className="row align-items-center g-4">
+          <div className="col-12 col-md-2 text-center text-md-start">
             <img
               className="img-fluid logo-footer"
               src={img('beatles-footer-logo-branco.png')}
-              alt="Logo Beatles Abbey Road"
+              alt="Logo dos Beatles"
             />
           </div>
 
-          <div className="col-md-5">
+          <div className="col-12 col-md-5 text-center text-md-start">
             <p>
-              <b>Trabalho de Front-end 2</b> - Banda
+              <strong>Trabalho de Front-end 2</strong> — Banda
               <br />
               Desenvolvido por Enzo Gabriel, Arthur Ribeiro, Gabriel Carrajola, Matheus Bonatti,
               Levi Lara e Jaderson Andrade.
               <br />
-              Todos os direitos reservados © 2026 - The Beatles
+              Todos os direitos reservados © 2026 — The Beatles
             </p>
           </div>
 
-          <div className="col-md-5">
-            <div className="row">
+          <div className="col-12 col-md-5">
+            <div className="row g-2">
               {colunas.map((coluna, i) => (
-                <div className="col-md-4" key={i}>
-                  <ul className="list-unstyled">
+                <div className="col-6 col-sm-4" key={i}>
+                  <ul className="list-unstyled mb-0">
                     {coluna.map((link) => (
-                      <li className="nav-item" key={link.href}>
-                        <a className="nav-link" href={link.href}>
+                      <li key={link.href}>
+                        <a className="footer-link" href={link.href}>
                           {link.label}
                         </a>
                       </li>

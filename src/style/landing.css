@@ -1,34 +1,12 @@
-/* Regras novas da Landing Page (o visual do grupo continua em style.css) */
+/* Ajustes específicos da Landing Page.
+   A maior parte do visual responsivo está centralizada em style.css. */
 
-/* rolagem suave ao clicar nos links do menu */
-html {
-  scroll-behavior: smooth;
-}
-
-/* o menu fixo tem cerca de 80px e não pode cobrir o título da seção */
 section[id] {
   scroll-margin-top: 90px;
 }
 
-/* Hero: foto com camada escura e texto por cima */
-.hero-landing {
-  position: relative;
-}
-
-.hero-landing > img {
-  display: block;
-  max-height: 85vh;
-  object-fit: cover;
-}
-
-.hero-camada {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.6);
+@media (max-width: 767.98px) {
+  section[id] {
+    scroll-margin-top: 72px;
+  }
 }
