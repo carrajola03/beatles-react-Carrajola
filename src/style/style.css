@@ -1,33 +1,43 @@
 @charset "UTF-8";
 
+/* THE BEATLES — CSS baseado no original do grupo + responsividade */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @font-face {
-  font-family: 'Bebas Neue';
-  src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
-  font-weight: 400;
+  font-family: "BEBAS NEUE";
+  src: url("/fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Playfair Display';
-  src: url('/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
-  font-weight: 400;
+  font-family: "Playfair Display";
+  src: url("/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter_18pt-Regular.ttf') format('truetype');
-  font-weight: 400;
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Regular.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter_18pt-Bold.ttf') format('truetype');
-  font-weight: 700;
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Bold.ttf") format("truetype");
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
@@ -36,71 +46,73 @@
   --branco: #ffffff;
   --preto: #1a1a1a;
   --cinza: #6e6e6e;
-  --cinza-claro: #f3f3f3;
   --vermelho: #c1121f;
   --vermelho-bold: #a40f1a;
-  --fonte-titulos: 'Bebas Neue', sans-serif;
-  --fonte-paragrafos: 'Inter', sans-serif;
-  --fonte-destaque: 'Playfair Display', serif;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+  --fonte-titulos: "BEBAS NEUE", sans-serif;
+  --fonte-paragrafos: "Inter", sans-serif;
+  --fonte-destaque: "Playfair Display", serif;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 86px;
+  scroll-padding-top: 82px;
 }
 
 body {
-  margin: 0;
-  background: var(--branco);
+  background-color: var(--branco);
   color: var(--preto);
   font-family: var(--fonte-paragrafos);
-  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
+}
+
+main {
+  flex: 1;
 }
 
 img {
   max-width: 100%;
 }
 
-section {
-  margin: 0;
-  padding-left: 0;
-  padding-right: 0;
+.destaque {
+  font-family: var(--fonte-destaque);
+  font-size: 2rem;
+  line-height: 1.5;
+  font-style: italic;
 }
 
-main {
-  overflow: hidden;
+.titulo {
+  font-family: var(--fonte-titulos);
+  font-size: 4rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.paragrafo {
+  font-family: var(--fonte-paragrafos);
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .navbar-beatles {
-  background: var(--preto);
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.16);
+  background-color: var(--preto);
 }
 
 .navbar-logo {
-  width: 62px;
-  height: 62px;
+  height: 80px;
+  width: auto;
   object-fit: contain;
 }
 
 .navbar-beatles .nav-link {
   color: rgba(255, 255, 255, 0.82);
-  font-size: 0.86rem;
-  font-weight: 700;
-  padding: 1.25rem 0.55rem;
-  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .navbar-beatles .nav-link:hover,
 .navbar-beatles .nav-link:focus {
   color: var(--branco);
-  background: rgba(255, 255, 255, 0.08);
 }
 
 .btn-primary {
@@ -112,104 +124,47 @@ main {
   --bs-btn-active-border-color: var(--vermelho-bold);
 }
 
+section {
+  margin: 0.5rem 2rem;
+  padding: 0.5rem 2rem;
+}
+
+.landing-section,
+.legado-section,
+.cta-section,
+#numeros {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .footer-beatles {
-  background: var(--preto);
+  background-color: var(--preto);
   color: var(--branco);
-  padding: 2.5rem 0;
+  margin-top: auto;
+  padding: 1.5rem;
 }
 
 .logo-footer {
-  width: 92px;
-  height: 92px;
-  object-fit: contain;
+  height: 5rem;
+  width: auto;
+}
+
+.footer-beatles a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-beatles a {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
 }
 
 .footer-beatles p {
-  margin: 0;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 0;
 }
 
-.footer-link {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0.62);
-  text-decoration: none;
-  padding: 0.18rem 0;
-  transition: color 0.2s ease;
-}
-
-.footer-link:hover,
-.footer-link:focus {
-  color: var(--branco);
-}
-
-.titulo,
-.section-kicker,
-.timeline-year {
-  font-family: var(--fonte-titulos);
-}
-
-.paragrafo {
-  font-family: var(--fonte-paragrafos);
-  line-height: 1.75;
-}
-
-.text-justificado {
-  text-align: justify;
-}
-
-.section-kicker {
-  display: inline-block;
-  color: var(--vermelho);
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.section-heading {
-  max-width: 850px;
-}
-
-.section-heading .display-4,
-.history-card .display-4,
-.legado-card .display-4,
-.cta-section .display-5 {
-  font-family: var(--fonte-titulos);
-  font-weight: 400;
-}
-
-.section-heading .display-4 {
-  letter-spacing: -0.02em;
-}
-
-.history-card {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: clamp(1.5rem, 4vw, 3.5rem);
-  border-left: 6px solid var(--vermelho);
-  background: var(--cinza-claro);
-}
-
-.faixa-preta {
-  background: var(--preto);
-  color: var(--branco);
-}
-
-.num-home {
-  font-family: var(--fonte-titulos);
-  font-size: clamp(2.8rem, 7vw, 5rem);
-  line-height: 1;
-  font-weight: 400;
-}
-
-.num-label {
-  margin: 0.75rem 0 0;
-  font-weight: 700;
-  font-size: 0.98rem;
-  color: rgba(255, 255, 255, 0.82);
-}
-
+/* HERO */
 .hero {
   margin: 0;
   padding: 0;
@@ -217,26 +172,25 @@ main {
 
 .hero-landing {
   position: relative;
-  min-height: min(78vh, 820px);
-  background: #111;
+  overflow: hidden;
 }
 
 .hero-image {
   display: block;
   width: 100%;
-  height: min(78vh, 820px);
+  height: auto;
   object-fit: cover;
-  object-position: center;
 }
 
 .hero-camada {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 2rem 1rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.45));
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.18);
 }
 
 .hero-content {
@@ -245,46 +199,56 @@ main {
 
 .hero-kicker {
   display: block;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.85rem;
-  letter-spacing: 0.18em;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.4rem;
 }
 
 .hero h1 {
-  margin: 0;
   color: var(--branco);
   font-family: var(--fonte-titulos);
-  font-size: clamp(4rem, 12vw, 9rem);
+  font-size: clamp(4rem, 10vw, 8rem);
   line-height: 0.9;
-  font-weight: 400;
+  font-weight: bold;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .hero p {
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
 }
 
-.gallery-card {
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid #e4e4e4;
+/* BLOCOS ORIGINAIS */
+.card-home {
+  margin: 2rem;
+  padding: 2rem;
+  width: 60%;
 }
 
-.gallery-image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  transition: transform 0.35s ease;
+.num-home {
+  font-family: var(--fonte-titulos);
+  font-size: 4rem;
+  line-height: 1.5;
+  font-weight: bold;
+  margin-bottom: -1.5rem;
 }
 
-.gallery-card:hover .gallery-image {
-  transform: scale(1.03);
+.num-label {
+  font-weight: bold;
 }
 
+.pa-home {
+  font-family: var(--fonte-paragrafos);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.text-justificado {
+  text-align: justify;
+}
+
+/* TIMELINE */
 .item-timeline {
   position: relative;
 }
@@ -292,41 +256,160 @@ main {
 .timeline-image {
   display: block;
   width: 100%;
-  height: clamp(230px, 35vw, 430px);
+  height: auto;
+  max-height: 430px;
   object-fit: cover;
-  border-radius: 0.4rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  border-radius: 0.25rem;
 }
 
 .timeline-year {
-  color: var(--vermelho);
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 1;
+  font-family: var(--fonte-titulos);
+  font-size: 4rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+/* IMAGENS / CARROSSÉIS */
+.img-jornal {
+  float: left;
+  width: 50%;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.secao-jornal p {
+  text-align: justify;
+}
+
+.container-carrossel {
+  margin-top: 80px;
+}
+
+#carrosselGeorge img {
+  height: 80%;
+  object-fit: cover;
+}
+
+.container-carrossel-dois {
+  float: left;
+  width: 50%;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+#carrosselLegado .carousel-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.bt-legado {
+  margin-top: 80px;
+}
+
+/* EFEITOS ORIGINAIS */
+.passada {
+  transition: transform 0.3s ease;
+}
+
+.passada:hover {
+  transform: translateY(-5px);
+}
+
+.hoverzada {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hoverzada:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.faixa-preta {
+  background-color: var(--preto);
 }
 
 .preto-e-branco {
   filter: grayscale(100%);
 }
 
+/* DISCOGRAFIA — mantém o visual do grupo */
+.album-card {
+  position: relative;
+  height: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--branco);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.album-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 1rem 1.75rem rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+.album-cover-wrap {
+  position: relative;
+}
+
+.album-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.album-ano {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  background-color: var(--vermelho);
+  color: var(--branco);
+  font-weight: bold;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+
+.album-card-body {
+  padding: 1rem;
+}
+
+.album-titulo {
+  color: var(--preto);
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.album-info {
+  color: var(--cinza);
+  font-size: 0.9rem;
+}
+
+/* INTEGRANTES */
 .member-card {
   background: var(--branco);
   border: 1px solid #e5e5e5;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .member-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.11);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
 }
 
 .member-image-wrap {
-  display: grid;
-  place-items: center;
-  min-height: 190px;
-  background: #ececec;
-  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background: #f1f1f1;
+  padding: 1rem;
 }
 
 .member-image {
@@ -340,24 +423,21 @@ main {
 }
 
 .member-card-body p {
-  color: #555;
-  line-height: 1.65;
-  font-size: 0.93rem;
+  line-height: 1.55;
 }
 
+/* LEGADO */
 .legado-section {
-  background: #f1f1f1;
+  background-color: var(--branco);
 }
 
 .legado-card {
-  background: var(--preto);
-  color: var(--branco);
-  padding: clamp(1.5rem, 4vw, 3rem);
+  background-color: var(--branco);
+  color: var(--preto);
 }
 
-.legado-card p {
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.75;
+.legado-card .section-kicker {
+  color: var(--vermelho);
 }
 
 .legado-image {
@@ -367,78 +447,61 @@ main {
   object-fit: cover;
 }
 
-.album-card {
-  background: var(--branco);
-  border: 1px solid #e1e1e1;
+.cta-section {
+  background-color: var(--preto);
+}
+
+/* GALERIA */
+.gallery-card {
   overflow: hidden;
-  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.album-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
-}
-
-.album-cover-wrap {
-  position: relative;
-  background: #ddd;
-  overflow: hidden;
-}
-
-.album-cover {
-  display: block;
+.gallery-image {
   width: 100%;
-  aspect-ratio: 1;
+  height: 280px;
   object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.album-ano {
-  position: absolute;
-  right: 0.65rem;
-  bottom: 0.65rem;
-  background: rgba(0, 0, 0, 0.78);
-  color: var(--branco);
-  padding: 0.25rem 0.55rem;
-  font-size: 0.76rem;
-  font-weight: 700;
+.gallery-card:hover .gallery-image {
+  transform: scale(1.02);
 }
 
-.album-card-body {
-  padding: 1rem;
+.galeria-fotos {
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
-.album-titulo {
-  line-height: 1.15;
-  min-height: 2.3em;
+.titulo-galeria {
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 10px;
 }
 
-.album-info {
-  color: var(--vermelho);
-  font-size: 0.78rem;
-  font-weight: 700;
-  margin-bottom: 0.65rem;
+.subtitulo-galeria {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #666;
 }
 
-.album-card-body p:last-child {
-  color: #5a5a5a;
-  font-size: 0.87rem;
-  line-height: 1.55;
-}
-
+/* CURIOSIDADES */
 .curiosidades-card {
   border: 1px solid #ddd;
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .curiosidades-card .accordion-button {
-  font-weight: 700;
+  font-weight: bold;
   color: var(--preto);
 }
 
 .curiosidades-card .accordion-button:not(.collapsed) {
   color: var(--branco);
-  background: var(--preto);
+  background-color: var(--preto);
   box-shadow: none;
 }
 
@@ -446,31 +509,56 @@ main {
   box-shadow: 0 0 0 0.2rem rgba(193, 18, 31, 0.2);
 }
 
-.cta-section {
-  background: var(--preto);
+/* TÍTULOS DA LANDING */
+.section-kicker {
+  display: inline-block;
+  color: var(--vermelho);
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
 }
 
-@media (max-width: 1199.98px) {
-  .navbar-beatles .nav-link {
-    padding-left: 0.42rem;
-    padding-right: 0.42rem;
-    font-size: 0.8rem;
-  }
+.section-heading {
+  max-width: 100%;
 }
 
+.section-heading .display-4,
+.history-card .display-4,
+.legado-card .display-4,
+.cta-section .display-5 {
+  font-family: var(--fonte-titulos);
+  font-weight: bold;
+}
+
+.history-card {
+  background-color: var(--branco);
+  border-left: 5px solid var(--vermelho);
+  padding: 2rem;
+}
+
+.legado-card p {
+  line-height: 1.6;
+}
+
+/* RESPONSIVIDADE — somente evita quebra no mobile */
 @media (max-width: 991.98px) {
+  .navbar-logo {
+    height: 70px;
+  }
+
   .navbar-beatles .nav-link {
-    padding: 0.75rem 0;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
   }
 
-  .navbar-beatles .navbar-nav {
-    padding: 0.5rem 0 1rem;
+  .card-home {
+    width: auto;
   }
 
-  .hero-landing,
-  .hero-image {
-    min-height: 68vh;
-    height: 68vh;
+  .titulo,
+  .timeline-year {
+    font-size: 3.25rem;
   }
 }
 
@@ -480,64 +568,65 @@ main {
   }
 
   .navbar-logo {
-    width: 54px;
-    height: 54px;
+    height: 62px;
   }
 
-  .hero-landing,
-  .hero-image {
-    min-height: 62vh;
-    height: 62vh;
+  section {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .landing-section,
+  .legado-section,
+  .cta-section,
+  #numeros {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .hero-camada {
-    padding: 1.25rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(3.5rem, 18vw, 6rem);
+    background: rgba(0, 0, 0, 0.22);
   }
 
   .hero-kicker {
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    font-size: 0.7rem;
   }
 
-  .display-4 {
-    font-size: 2.5rem;
+  .hero h1 {
+    font-size: clamp(3.2rem, 17vw, 5.5rem);
   }
 
-  .history-card {
-    border-left-width: 4px;
-  }
-
-  .text-md-end {
-    text-align: left !important;
-  }
-
-  .item-timeline {
-    margin-bottom: 3.5rem !important;
-  }
-
-  .timeline-image {
-    height: 260px;
-  }
-
-  .album-card-body {
-    padding: 0.8rem;
-  }
-
-  .album-titulo {
+  .hero p {
     font-size: 1rem;
   }
 
-  .album-card-body p:last-child {
-    font-size: 0.8rem;
+  .titulo {
+    font-size: 2.7rem;
+  }
+
+  .destaque {
+    font-size: 1.55rem;
+  }
+
+  .history-card {
+    padding: 1.25rem;
+    border-left-width: 4px;
+  }
+
+  .timeline-year {
+    font-size: 2.8rem;
+  }
+
+  .timeline-image {
+    max-height: 300px;
   }
 
   .member-image-wrap {
     min-height: 150px;
-    padding: 0.8rem;
   }
 
   .member-image {
@@ -549,45 +638,85 @@ main {
     padding: 0.9rem;
   }
 
-  .member-card-body h3 {
-    font-size: 1.05rem;
+  .gallery-image {
+    height: 240px;
   }
 
-  .member-card-body p {
-    font-size: 0.82rem;
+  .album-card:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .album-card-body {
+    padding: 0.8rem;
+  }
+
+  .album-titulo {
+    font-size: 1rem;
+  }
+
+  .album-info {
+    font-size: 0.8rem;
+  }
+
+  .logo-footer {
+    height: 4rem;
   }
 
   .footer-beatles {
-    padding: 2rem 0;
+    padding: 1.5rem 0.75rem;
   }
 }
 
 @media (max-width: 575.98px) {
-  .hero p {
-    font-size: 1rem;
+  .hero-camada {
+    padding: 0.75rem;
   }
 
-  .btn {
-    min-height: 44px;
-  }
-
-  .timeline-image {
-    height: 220px;
-  }
-
-  .album-card-body p:last-child {
+  .hero-kicker {
     display: none;
   }
 
-  .album-titulo {
-    min-height: auto;
+  .hero h1 {
+    font-size: clamp(3rem, 19vw, 4.5rem);
+  }
+
+  .hero .lead {
+    font-size: 0.95rem;
+  }
+
+  .hero .btn {
+    width: 100%;
+  }
+
+  .titulo {
+    font-size: 2.25rem;
   }
 
   .num-home {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
 
   .num-label {
+    font-size: 0.9rem;
+  }
+
+  .timeline-year {
+    font-size: 2.4rem;
+  }
+
+  .gallery-image {
+    height: 220px;
+  }
+
+  .album-card:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .album-card-body p:last-child {
     font-size: 0.82rem;
+  }
+
+  .footer-beatles p {
+    font-size: 0.9rem;
   }
 }
