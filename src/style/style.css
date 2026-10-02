@@ -265,8 +265,13 @@ section:first-of-type {
    TIMELINE
    ========================================================= */
 
+/* =========================================================
+   TIMELINE — AJUSTE DAS IMAGENS E TEXTOS
+   ========================================================= */
+
 .timeline {
   position: relative;
+  color: var(--preto);
 }
 
 .timeline-item {
@@ -276,12 +281,33 @@ section:first-of-type {
 
 .timeline-year {
   font-family: var(--fonte-titulos);
-  color: var(--vermelho);
+  color: var(--preto);
   font-size: 2.5rem;
 }
 
 .timeline-content {
   padding: 1rem;
+  color: var(--preto);
+}
+
+/* Todas as imagens da timeline com o mesmo tamanho */
+.timeline img,
+.timeline .card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Textos da timeline em preto */
+.timeline p,
+.timeline h2,
+.timeline h3,
+.timeline h4,
+.timeline span,
+.timeline .paragrafo,
+.timeline .timeline-content {
+  color: var(--preto);
 }
 
 /* =========================================================
@@ -307,22 +333,76 @@ section:first-of-type {
    ========================================================= */
 
 .album-card {
+  height: 100%;
+  background: var(--branco);
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .album-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.album-card img {
+/* Área da capa: todas ficam exatamente no mesmo tamanho */
+.album-cover-wrap {
+  position: relative;
   width: 100%;
-  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #eeeeee;
 }
 
-.album-title {
+.album-cover {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Ano do álbum */
+.album-ano {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.35rem 0.7rem;
+  background: var(--preto);
+  color: var(--branco);
+  font-family: var(--fonte-paragrafos);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Texto do card */
+.album-card-body {
+  padding: 1rem;
+  background: var(--branco);
+}
+
+.album-titulo {
+  margin: 0 0 0.4rem;
+  color: var(--preto);
   font-family: var(--fonte-titulos);
-  font-size: 1.7rem;
-  margin-top: 0.8rem;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.album-info {
+  margin: 0 0 0.6rem;
+  color: var(--cinza);
+  font-family: var(--fonte-paragrafos);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.album-card-body .text-justificado {
+  margin: 0;
+  color: var(--preto);
+  font-family: var(--fonte-paragrafos);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 /* =========================================================
@@ -512,12 +592,22 @@ section:first-of-type {
   .bt-legado {
     margin-top: 30px;
   }
+
+  .timeline img,
+.timeline .card img {
+  height: 220px;
+}
 }
 
 @media (max-width: 575.98px) {
   .titulo {
     font-size: 2rem;
   }
+
+  .timeline img,
+.timeline .card img {
+  height: 190px;
+}
 
   .paragrafo,
   .pa-home {
