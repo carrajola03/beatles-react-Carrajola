@@ -1,293 +1,298 @@
-@charset "UTF-8";
-
-/* THE BEATLES — CSS baseado no original do grupo + responsividade */
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* =========================================================
+   THE BEATLES — CSS
+   Baseado no visual do site original + ajustes responsivos
+   ========================================================= */
 
 @font-face {
-  font-family: "BEBAS NEUE";
+  font-family: "Bebas Neue";
   src: url("/fonts/BebasNeue-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Playfair Display";
   src: url("/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter_18pt-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter_18pt-Bold.ttf") format("truetype");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
-  font-display: swap;
 }
 
 :root {
   --branco: #ffffff;
   --preto: #1a1a1a;
   --cinza: #6e6e6e;
+  --cinza-claro: #f4f4f4;
   --vermelho: #c1121f;
-  --vermelho-bold: #a40f1a;
-  --fonte-titulos: "BEBAS NEUE", sans-serif;
-  --fonte-paragrafos: "Inter", sans-serif;
-  --fonte-destaque: "Playfair Display", serif;
+  --vermelho-escuro: #a40f1a;
+
+  --fonte-titulos: "Bebas Neue", Arial, sans-serif;
+  --fonte-serif: "Playfair Display", Georgia, serif;
+  --fonte-paragrafos: "Inter", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 82px;
+  scroll-padding-top: 80px;
 }
 
 body {
-  background-color: var(--branco);
+  margin: 0;
+  padding: 0;
   color: var(--preto);
+  background: var(--branco);
   font-family: var(--fonte-paragrafos);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   overflow-x: hidden;
-}
-
-main {
-  flex: 1;
 }
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
-.destaque {
-  font-family: var(--fonte-destaque);
-  font-size: 2rem;
-  line-height: 1.5;
-  font-style: italic;
+a {
+  text-decoration: none;
 }
+
+/* =========================================================
+   TIPOGRAFIA
+   ========================================================= */
 
 .titulo {
   font-family: var(--fonte-titulos);
-  font-size: 4rem;
-  line-height: 1.5;
-  font-weight: bold;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: var(--preto);
+  text-transform: uppercase;
 }
 
 .paragrafo {
   font-family: var(--fonte-paragrafos);
-  font-size: 1rem;
-  line-height: 1.5;
+  color: var(--preto);
+  line-height: 1.7;
 }
+
+.destaque {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
 .navbar-beatles {
-  background-color: var(--preto);
+  background: var(--preto);
+  min-height: 80px;
+  z-index: 1000;
 }
 
-.navbar-logo {
+.navbar-beatles .navbar-brand img {
   height: 80px;
   width: auto;
   object-fit: contain;
 }
 
 .navbar-beatles .nav-link {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--branco) !important;
+  font-family: var(--fonte-paragrafos);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
 }
 
 .navbar-beatles .nav-link:hover,
-.navbar-beatles .nav-link:focus {
-  color: var(--branco);
+.navbar-beatles .nav-link.active {
+  color: var(--vermelho) !important;
 }
 
-.btn-primary {
-  --bs-btn-bg: var(--vermelho);
-  --bs-btn-border-color: var(--vermelho-bold);
-  --bs-btn-hover-bg: var(--vermelho-bold);
-  --bs-btn-hover-border-color: var(--vermelho-bold);
-  --bs-btn-active-bg: var(--vermelho);
-  --bs-btn-active-border-color: var(--vermelho-bold);
+/* =========================================================
+   HERO
+   ========================================================= */
+
+/* O início fica somente com a imagem, como no site original.
+   Não há título, texto ou chamada sobre a imagem. */
+
+.hero {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
+.hero img,
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: cover;
+}
+
+.hero-content,
+.hero-overlay,
+.hero-text,
+.hero-copy,
+.hero-kicker {
+  display: none !important;
+}
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
 
 section {
   margin: 0.5rem 2rem;
   padding: 0.5rem 2rem;
 }
 
-.landing-section,
-.legado-section,
-.cta-section,
-#numeros {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
+section:first-of-type {
+  margin-top: 0;
 }
 
-.footer-beatles {
-  background-color: var(--preto);
-  color: var(--branco);
-  margin-top: auto;
-  padding: 1.5rem;
-}
-
-.logo-footer {
-  height: 5rem;
-  width: auto;
-}
-
-.footer-beatles a:hover {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.footer-beatles a {
-  color: rgba(255, 255, 255, 0.55);
-  text-decoration: none;
-}
-
-.footer-beatles p {
-  margin-bottom: 0;
-}
-
-/* HERO */
-.hero {
-  margin: 0;
-  padding: 0;
-}
-
-.hero-landing {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-image {
-  display: block;
+.container-beatles {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.hero-camada {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.18);
-}
+/* =========================================================
+   CARDS / HOME
+   ========================================================= */
 
-.hero-content {
-  max-width: 900px;
-}
-
-.hero-kicker {
-  display: block;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.85rem;
-  font-weight: bold;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.4rem;
-}
-
-.hero h1 {
-  color: var(--branco);
-  font-family: var(--fonte-titulos);
-  font-size: clamp(4rem, 10vw, 8rem);
-  line-height: 0.9;
-  font-weight: bold;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-}
-
-.hero p {
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
-}
-
-/* BLOCOS ORIGINAIS */
 .card-home {
-  margin: 2rem;
-  padding: 2rem;
   width: 60%;
+  margin: 0 auto;
 }
 
-.num-home {
-  font-family: var(--fonte-titulos);
-  font-size: 4rem;
-  line-height: 1.5;
-  font-weight: bold;
-  margin-bottom: -1.5rem;
-}
-
-.num-label {
-  font-weight: bold;
-}
-
-.pa-home {
-  font-family: var(--fonte-paragrafos);
-  font-size: 1.5rem;
-  line-height: 1.5;
+.card-home img {
+  width: 100%;
+  display: block;
 }
 
 .text-justificado {
   text-align: justify;
 }
 
-/* TIMELINE */
-.item-timeline {
+.pa-home {
+  font-family: var(--fonte-paragrafos);
+  line-height: 1.7;
+}
+
+.num-home {
+  font-family: var(--fonte-titulos);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--branco);
+  font-weight: 400;
+}
+
+.num-label {
+  margin-top: 0.7rem;
+  color: var(--branco);
+  font-family: var(--fonte-paragrafos);
+  font-weight: 700;
+}
+
+/* =========================================================
+   FAIXA PRETA / NÚMEROS
+   ========================================================= */
+
+.faixa-preta {
+  background: var(--preto);
+  color: var(--branco);
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 3.5rem 2rem;
+}
+
+.faixa-preta .paragrafo,
+.faixa-preta p,
+.faixa-preta h2,
+.faixa-preta h3,
+.faixa-preta span {
+  color: var(--branco);
+}
+
+.faixa-preta .num-home {
+  color: var(--branco);
+}
+
+/* =========================================================
+   GALERIA
+   ========================================================= */
+
+.galeria,
+.gallery {
+  width: 100%;
+}
+
+.galeria img,
+.gallery img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover,
+.gallery img:hover {
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.timeline {
   position: relative;
 }
 
-.timeline-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 430px;
-  object-fit: cover;
-  border-radius: 0.25rem;
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
 }
 
 .timeline-year {
   font-family: var(--fonte-titulos);
-  font-size: 4rem;
-  line-height: 1.5;
-  font-weight: bold;
+  color: var(--vermelho);
+  font-size: 2.5rem;
 }
 
-/* IMAGENS / CARROSSÉIS */
+.timeline-content {
+  padding: 1rem;
+}
+
+/* =========================================================
+   CARROSSEL
+   ========================================================= */
+
 .img-jornal {
   float: left;
   width: 50%;
   margin-right: 40px;
   margin-bottom: 20px;
-}
-
-.secao-jornal p {
-  text-align: justify;
-}
-
-.container-carrossel {
-  margin-top: 80px;
-}
-
-#carrosselGeorge img {
-  height: 80%;
-  object-fit: cover;
 }
 
 .container-carrossel-dois {
@@ -297,399 +302,226 @@ section {
   margin-bottom: 20px;
 }
 
-#carrosselLegado .carousel-item img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+/* =========================================================
+   ÁLBUNS
+   ========================================================= */
+
+.album-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.album-card:hover {
+  transform: scale(1.03);
+}
+
+.album-card img {
+  width: 100%;
+  display: block;
+}
+
+.album-title {
+  font-family: var(--fonte-titulos);
+  font-size: 1.7rem;
+  margin-top: 0.8rem;
+}
+
+/* =========================================================
+   INTEGRANTES
+   ========================================================= */
+
+.member-card {
+  height: 100%;
+  overflow: hidden;
+}
+
+.member-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.member-card h3 {
+  font-family: var(--fonte-titulos);
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+/* =========================================================
+   LEGADO
+   ========================================================= */
 
 .bt-legado {
   margin-top: 80px;
 }
 
-/* EFEITOS ORIGINAIS */
-.passada {
-  transition: transform 0.3s ease;
+.card-video {
+  width: 100%;
+  overflow: hidden;
 }
 
-.passada:hover {
-  transform: translateY(-5px);
+.card-video iframe {
+  width: 100%;
+  min-height: 400px;
+  border: 0;
 }
+
+.legado-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* =========================================================
+   EFEITOS / DESTAQUES
+   ========================================================= */
 
 .hoverzada {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.25s ease;
 }
 
 .hoverzada:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15) !important;
-}
-
-.faixa-preta {
-  background-color: var(--preto);
+  transform: translateY(-4px);
 }
 
 .preto-e-branco {
   filter: grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
-/* DISCOGRAFIA — mantém o visual do grupo */
-.album-card {
-  position: relative;
-  height: 100%;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  cursor: pointer;
-  background-color: var(--branco);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.preto-e-branco:hover {
+  filter: grayscale(0%);
 }
 
-.album-card:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 1rem 1.75rem rgba(0, 0, 0, 0.35);
-  z-index: 2;
-}
+/* =========================================================
+   BOTÕES
+   ========================================================= */
 
-.album-cover-wrap {
-  position: relative;
-}
-
-.album-cover {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
-
-.album-ano {
-  position: absolute;
-  top: 0.6rem;
-  left: 0.6rem;
-  background-color: var(--vermelho);
+.btn-beatles {
+  background: var(--vermelho);
   color: var(--branco);
-  font-weight: bold;
-  padding: 0.2rem 0.7rem;
-  border-radius: 999px;
+  border: 1px solid var(--vermelho);
+  font-family: var(--fonte-paragrafos);
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  transition: all 0.2s ease;
 }
 
-.album-card-body {
-  padding: 1rem;
+.btn-beatles:hover {
+  background: var(--vermelho-escuro);
+  border-color: var(--vermelho-escuro);
+  color: var(--branco);
 }
 
-.album-titulo {
-  color: var(--preto);
-  font-weight: bold;
-  margin-bottom: 0.3rem;
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer-beatles {
+  background: var(--preto);
+  color: var(--branco);
+  padding: 3rem 2rem;
 }
 
-.album-info {
-  color: var(--cinza);
-  font-size: 0.9rem;
+.footer-beatles a {
+  color: var(--branco);
+  transition: color 0.2s ease;
 }
 
-/* INTEGRANTES */
-.member-card {
-  background: var(--branco);
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-  overflow: hidden;
-  height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
-}
-
-.member-image-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
-  background: #f1f1f1;
-  padding: 1rem;
-}
-
-.member-image {
-  width: 150px;
-  height: 160px;
-  object-fit: contain;
-}
-
-.member-card-body {
-  padding: 1.25rem;
-}
-
-.member-card-body p {
-  line-height: 1.55;
-}
-
-/* LEGADO */
-.legado-section {
-  background-color: var(--branco);
-}
-
-.legado-card {
-  background-color: var(--branco);
-  color: var(--preto);
-}
-
-.legado-card .section-kicker {
+.footer-beatles a:hover {
   color: var(--vermelho);
 }
 
-.legado-image {
-  display: block;
-  width: 100%;
-  max-height: 360px;
-  object-fit: cover;
+.footer-beatles img {
+  max-height: 80px;
+  width: auto;
 }
 
-.cta-section {
-  background-color: var(--preto);
-}
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
 
-/* GALERIA */
-.gallery-card {
-  overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.gallery-image {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.gallery-card:hover .gallery-image {
-  transform: scale(1.02);
-}
-
-.galeria-fotos {
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
-
-.titulo-galeria {
-  text-align: center;
-  margin-top: 45px;
-  margin-bottom: 10px;
-}
-
-.subtitulo-galeria {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #666;
-}
-
-/* CURIOSIDADES */
-.curiosidades-card {
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.curiosidades-card .accordion-button {
-  font-weight: bold;
-  color: var(--preto);
-}
-
-.curiosidades-card .accordion-button:not(.collapsed) {
-  color: var(--branco);
-  background-color: var(--preto);
-  box-shadow: none;
-}
-
-.curiosidades-card .accordion-button:focus {
-  box-shadow: 0 0 0 0.2rem rgba(193, 18, 31, 0.2);
-}
-
-/* TÍTULOS DA LANDING */
-.section-kicker {
-  display: inline-block;
-  color: var(--vermelho);
-  font-size: 0.9rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.4rem;
-}
-
-.section-heading {
-  max-width: 100%;
-}
-
-.section-heading .display-4,
-.history-card .display-4,
-.legado-card .display-4,
-.cta-section .display-5 {
-  font-family: var(--fonte-titulos);
-  font-weight: bold;
-}
-
-.history-card {
-  background-color: var(--branco);
-  border-left: 5px solid var(--vermelho);
-  padding: 2rem;
-}
-
-.legado-card p {
-  line-height: 1.6;
-}
-
-/* RESPONSIVIDADE — somente evita quebra no mobile */
 @media (max-width: 991.98px) {
-  .navbar-logo {
-    height: 70px;
-  }
-
-  .navbar-beatles .nav-link {
-    padding-top: 0.65rem;
-    padding-bottom: 0.65rem;
+  section {
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .card-home {
-    width: auto;
+    width: 80%;
   }
 
-  .titulo,
-  .timeline-year {
-    font-size: 3.25rem;
+  .img-jornal,
+  .container-carrossel-dois {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .titulo {
+    font-size: 2.8rem;
   }
 }
 
 @media (max-width: 767.98px) {
   html {
-    scroll-padding-top: 72px;
+    scroll-padding-top: 70px;
   }
 
-  .navbar-logo {
-    height: 62px;
+  .navbar-beatles {
+    min-height: 70px;
+  }
+
+  .navbar-beatles .navbar-brand img {
+    height: 70px;
   }
 
   section {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    margin: 0.5rem 0.5rem;
+    padding: 0.5rem 0.75rem;
   }
 
-  .landing-section,
-  .legado-section,
-  .cta-section,
-  #numeros {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .hero-camada {
-    background: rgba(0, 0, 0, 0.22);
-  }
-
-  .hero-kicker {
-    font-size: 0.7rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(3.2rem, 17vw, 5.5rem);
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .titulo {
-    font-size: 2.7rem;
-  }
-
-  .destaque {
-    font-size: 1.55rem;
-  }
-
-  .history-card {
-    padding: 1.25rem;
-    border-left-width: 4px;
-  }
-
-  .timeline-year {
-    font-size: 2.8rem;
-  }
-
-  .timeline-image {
-    max-height: 300px;
-  }
-
-  .member-image-wrap {
-    min-height: 150px;
-  }
-
-  .member-image {
-    width: 120px;
-    height: 130px;
-  }
-
-  .member-card-body {
-    padding: 0.9rem;
-  }
-
-  .gallery-image {
-    height: 240px;
-  }
-
-  .album-card:hover {
-    transform: translateY(-4px) scale(1.02);
-  }
-
-  .album-card-body {
-    padding: 0.8rem;
-  }
-
-  .album-titulo {
-    font-size: 1rem;
-  }
-
-  .album-info {
-    font-size: 0.8rem;
-  }
-
-  .logo-footer {
-    height: 4rem;
-  }
-
-  .footer-beatles {
-    padding: 1.5rem 0.75rem;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .hero-camada {
-    padding: 0.75rem;
-  }
-
-  .hero-kicker {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 19vw, 4.5rem);
-  }
-
-  .hero .lead {
-    font-size: 0.95rem;
-  }
-
-  .hero .btn {
+  .card-home {
     width: 100%;
   }
 
   .titulo {
-    font-size: 2.25rem;
+    font-size: 2.4rem;
+  }
+
+  .faixa-preta {
+    padding: 2.5rem 1rem;
+  }
+
+  .num-home {
+    font-size: 3.5rem;
+  }
+
+  .galeria img,
+  .gallery img {
+    height: 220px;
+  }
+
+  .member-card img {
+    height: 300px;
+  }
+
+  .card-video iframe {
+    min-height: 260px;
+  }
+
+  .bt-legado {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .paragrafo,
+  .pa-home {
+    font-size: 0.95rem;
   }
 
   .num-home {
@@ -700,23 +532,12 @@ section {
     font-size: 0.9rem;
   }
 
-  .timeline-year {
-    font-size: 2.4rem;
+  .galeria img,
+  .gallery img {
+    height: 190px;
   }
 
-  .gallery-image {
-    height: 220px;
-  }
-
-  .album-card:hover {
-    transform: translateY(-2px) scale(1.01);
-  }
-
-  .album-card-body p:last-child {
-    font-size: 0.82rem;
-  }
-
-  .footer-beatles p {
-    font-size: 0.9rem;
+  .member-card img {
+    height: 260px;
   }
 }
