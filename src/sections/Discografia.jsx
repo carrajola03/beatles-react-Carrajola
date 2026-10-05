@@ -38,7 +38,6 @@ export default function Discografia() {
               <article className="album-card h-100">
                 <div className="album-cover-wrap">
                   <img className="album-cover" src={img(album.capa)} alt={album.alt} />
-                  <span className="album-ano">{album.ano}</span>
                 </div>
                 <div className="album-card-body">
                   <h3 className="album-titulo h5">{album.titulo}</h3>
