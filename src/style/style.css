@@ -931,3 +931,7 @@ section[id] { scroll-margin-top: 90px; }
     font-size: .82rem;
   }
 }
+
+
+/* Remove o selo circular vermelho sobre as capas dos álbuns */
+.album-ano { display: none !important; }
