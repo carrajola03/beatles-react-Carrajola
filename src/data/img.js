@@ -17,11 +17,21 @@ const imagensOriginais = {
 const originalBase =
   "https://raw.githubusercontent.com/wnsogabriel/thebeatles-front2/main/assets/img/"
 
+
+const originalExtras = new Set([
+  'galeria1.jpeg','galeria2.jpeg','galeria3.jpeg','galeria4.jpeg','galeria5.jpeg','galeria6.jpeg','galeria7.jpeg','galeria8.jpeg','galeria9.webp',
+  'AFormação.jpg','LoveMeDoTL.webp','SgtPepperTL.jpg','AbbeyRoadTL.jpg'
+])
+
 export function img(nome) {
   const original = imagensOriginais[nome]
 
   if (original) {
     return originalBase + encodeURIComponent(original)
+  }
+
+  if (originalExtras.has(nome)) {
+    return originalBase + encodeURIComponent(nome)
   }
 
   return `/img/${nome}`
