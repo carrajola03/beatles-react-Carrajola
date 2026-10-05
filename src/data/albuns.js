@@ -1,6 +1,6 @@
 export const albuns = [
   {
-    capa: "PleasePleaseMe.jpeg",
+    capa: "The_Beatles_-_Please_Please_Me.jpg",
     alt: "Capa do álbum Please Please Me",
     ano: 1963,
     titulo: "Please Please Me",
@@ -8,7 +8,7 @@ export const albuns = [
     descricao: "Álbum de estreia da banda, gravado em pouco mais de dez horas de estúdio."
   },
   {
-    capa: "WithTheBeatles.jpeg",
+    capa: "The_Beatles_-_With_the_Beatles.jpg",
     alt: "Capa do álbum With the Beatles",
     ano: 1963,
     titulo: "With the Beatles",
@@ -16,7 +16,7 @@ export const albuns = [
     descricao: "Segundo álbum da banda, conhecido pela capa em preto e branco com os rostos parcialmente na sombra."
   },
   {
-    capa: "AHardDaysNight.jpeg",
+    capa: "a_hard_days_night_album.jpg",
     alt: "Capa do álbum A Hard Day's Night",
     ano: 1964,
     titulo: "A Hard Day's Night",
@@ -24,7 +24,7 @@ export const albuns = [
     descricao: "Trilha sonora do primeiro filme da banda."
   },
   {
-    capa: "ForSale.jpeg",
+    capa: "Capa_do_Albun_Beatles_For_Sale.jpeg",
     alt: "Capa do álbum Beatles for Sale",
     ano: 1964,
     titulo: "Beatles for Sale",
@@ -32,7 +32,7 @@ export const albuns = [
     descricao: "Mistura composições próprias com regravações."
   },
   {
-    capa: "Help!.jpeg",
+    capa: "beatles-help-capa-album.jpg",
     alt: "Capa do álbum Help!",
     ano: 1965,
     titulo: "Help!",
@@ -40,7 +40,7 @@ export const albuns = [
     descricao: "Trilha do segundo filme da banda."
   },
   {
-    capa: "RubberSoul.jpeg",
+    capa: "The_Beatles_-_HRubber_Soul.jpg",
     alt: "Capa do álbum Rubber Soul",
     ano: 1965,
     titulo: "Rubber Soul",
@@ -48,7 +48,7 @@ export const albuns = [
     descricao: "Marca a virada da banda para sonoridades mais maduras."
   },
   {
-    capa: "Revolver.jpeg",
+    capa: "Revolver_album.jpg",
     alt: "Capa do álbum Revolver",
     ano: 1966,
     titulo: "Revolver",
@@ -56,7 +56,7 @@ export const albuns = [
     descricao: "Álbum marcado pela experimentação em estúdio."
   },
   {
-    capa: "Sgt.Pepper's.jpeg",
+    capa: "Sgt_Peppers.jpg",
     alt: "Capa do álbum Sgt. Pepper's Lonely Hearts Club Band",
     ano: 1967,
     titulo: "Sgt. Pepper's Lonely Hearts Club Band",
@@ -64,7 +64,7 @@ export const albuns = [
     descricao: "Álbum conceitual marcado pela experimentação musical."
   },
   {
-    capa: "MagicalMystery.jpeg",
+    capa: "MagicalMysteryTourDoubleEPcover.jpg",
     alt: "Capa do álbum Magical Mystery Tour",
     ano: 1967,
     titulo: "Magical Mystery Tour",
@@ -72,7 +72,7 @@ export const albuns = [
     descricao: "Trilha sonora do especial de televisão da banda."
   },
   {
-    capa: "ÁlbumBranco.jpeg",
+    capa: "TheBeatles68LP.jpg",
     alt: "Capa do álbum The Beatles, conhecido como Álbum Branco",
     ano: 1968,
     titulo: "The Beatles (Álbum Branco)",
@@ -80,7 +80,7 @@ export const albuns = [
     descricao: "Reúne uma enorme variedade de estilos musicais."
   },
   {
-    capa: "YellowSubmarine.jpeg",
+    capa: "Yellow-submarine.jpg",
     alt: "Capa do álbum Yellow Submarine",
     ano: 1969,
     titulo: "Yellow Submarine",
@@ -88,7 +88,7 @@ export const albuns = [
     descricao: "Trilha sonora do filme de animação de mesmo nome."
   },
   {
-    capa: "AbbeyRoad.jpeg",
+    capa: "The_Beatles_Abbey_Road_album_cover.jpg",
     alt: "Capa do álbum Abbey Road",
     ano: 1969,
     titulo: "Abbey Road",
@@ -96,7 +96,7 @@ export const albuns = [
     descricao: "Penúltimo álbum gravado pela banda."
   },
   {
-    capa: "LetItBe.jpeg",
+    capa: "The_Beatles_-_Let_It_Be.jpg",
     alt: "Capa do álbum Let It Be",
     ano: 1970,
     titulo: "Let It Be",
@@ -124,7 +124,7 @@ export const eventos = [
   {
     ano: "1962",
     titulo: "Love Me Do",
-    imagem: "PleasePleaseMe.jpeg",
+    imagem: "The_Beatles_-_Please_Please_Me.jpg",
     alt: "Capa do álbum Please Please Me",
     texto:
       "O lançamento de Love Me Do marca o início da trajetória fonográfica dos Beatles e antecede a explosão internacional que transformaria o grupo em um fenômeno mundial.",
@@ -132,7 +132,7 @@ export const eventos = [
   {
     ano: "1967",
     titulo: "A Revolução no Estúdio",
-    imagem: "Sgt.Pepper's.jpeg",
+    imagem: "Sgt_Peppers.jpg",
     alt: "Capa do álbum Sgt. Pepper's Lonely Hearts Club Band",
     texto:
       "Com Sgt. Pepper’s Lonely Hearts Club Band, a banda amplia as possibilidades de gravação e experimentação, transformando o estúdio em parte essencial do processo criativo.",
@@ -140,7 +140,7 @@ export const eventos = [
   {
     ano: "1969",
     titulo: "Abbey Road e a Despedida",
-    imagem: "AbbeyRoad.jpeg",
+    imagem: "The_Beatles_Abbey_Road_album_cover.jpg",
     alt: "Capa do álbum Abbey Road",
     texto:
       "Abbey Road representa um dos últimos grandes trabalhos gravados pelo grupo e ficou marcado por sua capa icônica.",
