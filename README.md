@@ -97,3 +97,5 @@ O arquivo `netlify.toml` também deixa essas configurações registradas no proj
 ## Referência
 
 A pasta `referencia-html/` contém o material HTML/CSS original utilizado como base para a migração.
+
+beatles-react-carrajola.netlify.app
