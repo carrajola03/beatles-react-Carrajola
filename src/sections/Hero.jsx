@@ -3,6 +3,7 @@ import { img } from '../data/img'
 export default function Hero() {
   return (
     <section id="inicio" className="hero hero-landing">
+      <h1 className="visually-hidden">The Beatles</h1>
       <img className="hero-image" src={img('hero-local.png')} alt="Foto dos Beatles" />
       <div className="hero-camada">
         <div className="container hero-content">
