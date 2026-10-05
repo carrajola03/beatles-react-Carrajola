@@ -631,3 +631,303 @@ section:first-of-type {
     height: 260px;
   }
 }
+
+
+/* =========================================================
+   FINAL POLISH — LANDING PAGE
+   Mantém o visual do site original e corrige os componentes React
+   ========================================================= */
+
+/* Hero limpo, igual ao início do site original */
+.hero-landing,
+.hero-landing.hero {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+.hero-landing .hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: cover;
+}
+.hero-landing .hero-camada,
+.hero-landing .hero-content {
+  display: none !important;
+}
+
+/* Cards da história e demais blocos da Landing */
+.history-card,
+.legado-card {
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 8px 28px rgba(0,0,0,.07);
+  background: var(--branco);
+}
+.history-card { padding: 3rem; }
+.legado-card { padding: 3rem; }
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: .5rem;
+  color: var(--vermelho);
+  font-family: var(--fonte-paragrafos);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.section-heading h2,
+.history-card h2,
+.legado-card h2 {
+  font-family: var(--fonte-titulos);
+  font-weight: 400 !important;
+  color: var(--preto);
+}
+
+/* Números: ocupa a faixa inteira e mantém o texto branco */
+.faixa-preta {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background: var(--preto) !important;
+  color: var(--branco) !important;
+}
+.faixa-preta .num-home {
+  color: var(--branco) !important;
+  margin: 0;
+}
+.faixa-preta p,
+.faixa-preta .paragrafo,
+.faixa-preta .num-label {
+  color: var(--branco) !important;
+}
+
+/* Galeria: todas as fotos têm exatamente a mesma área */
+.gallery-card {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.14);
+}
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 280px !important;
+  object-fit: cover !important;
+  transition: transform .4s ease;
+}
+.gallery-card:hover .gallery-image {
+  transform: scale(1.03);
+}
+
+/* Timeline: padronização das imagens */
+.timeline-image {
+  display: block;
+  width: 100%;
+  height: 320px !important;
+  object-fit: cover !important;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.15);
+}
+.item-timeline .timeline-year {
+  color: var(--preto) !important;
+  font-family: var(--fonte-titulos);
+  font-size: 3rem;
+  line-height: 1;
+}
+.item-timeline h3,
+.item-timeline p {
+  color: var(--preto);
+}
+
+/* Integrantes */
+.member-card {
+  height: 100%;
+  overflow: hidden;
+  background: var(--branco);
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,.13);
+}
+.member-image-wrap { overflow: hidden; }
+.member-image {
+  display: block;
+  width: 100%;
+  height: 340px !important;
+  object-fit: cover !important;
+}
+.member-card-body { padding: 1.2rem; }
+.member-card h3 {
+  color: var(--preto);
+  font-family: var(--fonte-titulos);
+  font-weight: 400 !important;
+  text-transform: uppercase;
+}
+
+/* Legado */
+.legado-image {
+  display: block;
+  width: 100%;
+  height: 360px !important;
+  object-fit: cover !important;
+}
+
+/* Discografia — igual ao conceito original, mas com capas perfeitamente quadradas */
+.album-card {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: .75rem;
+  background: var(--branco);
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.album-card:hover {
+  transform: translateY(-6px) scale(1.025);
+  box-shadow: 0 1rem 1.75rem rgba(0,0,0,.25);
+  z-index: 2;
+}
+.album-cover-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #eee;
+}
+.album-cover {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+}
+.album-ano {
+  position: absolute;
+  top: .6rem;
+  left: .6rem;
+  background: var(--vermelho);
+  color: var(--branco);
+  font-family: var(--fonte-paragrafos);
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .25rem .7rem;
+  border-radius: 999px;
+}
+.album-card-body { padding: 1rem; }
+.album-titulo {
+  margin-bottom: .3rem;
+  color: var(--preto);
+  font-family: var(--fonte-paragrafos);
+  font-size: 1.05rem;
+  font-weight: 700 !important;
+  line-height: 1.25;
+}
+.album-info {
+  margin-bottom: .6rem;
+  color: var(--cinza);
+  font-size: .9rem;
+  font-weight: 700;
+}
+.album-card-body .text-justificado {
+  margin-bottom: 0;
+  color: var(--preto);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+/* Curiosidades */
+.curiosidades-card {
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+.curiosidades-card .accordion-button {
+  color: var(--preto);
+  font-weight: 700;
+}
+.curiosidades-card .accordion-button:not(.collapsed) {
+  color: var(--preto);
+  background: #f4f4f4;
+  box-shadow: none;
+}
+.curiosidades-card .accordion-button:focus { box-shadow: none; }
+
+/* CTA */
+.cta-section {
+  margin: 0 !important;
+  background: var(--preto);
+  color: var(--branco);
+}
+.cta-section h2,
+.cta-section p { color: var(--branco) !important; }
+
+/* Espaçamento e âncoras */
+section[id] { scroll-margin-top: 90px; }
+.landing-section { margin: 0; }
+
+@media (max-width: 767.98px) {
+  section[id] { scroll-margin-top: 72px; }
+
+  .history-card,
+  .legado-card { padding: 2rem 1.25rem; }
+
+  .gallery-image {
+    height: 230px !important;
+  }
+
+  .timeline-image {
+    height: 230px !important;
+  }
+
+  .item-timeline .text-md-end {
+    text-align: left !important;
+  }
+
+  .member-image {
+    height: 280px !important;
+  }
+
+  .legado-image {
+    height: 280px !important;
+  }
+
+  .faixa-preta .num-home {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .gallery-image {
+    height: 190px !important;
+  }
+
+  .timeline-image {
+    height: 190px !important;
+  }
+
+  .member-image {
+    height: 240px !important;
+  }
+
+  .legado-image {
+    height: 220px !important;
+  }
+
+  .album-card-body {
+    padding: .8rem;
+  }
+
+  .album-titulo {
+    font-size: .95rem;
+  }
+
+  .album-card-body .text-justificado {
+    font-size: .82rem;
+  }
+}
